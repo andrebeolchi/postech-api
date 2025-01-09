@@ -24,7 +24,7 @@ Content-Type: application/json
 
 ### 4. Update a post
 
-PATCH {{BASE_URL}}/posts/{{POST_ID}}
+PUT {{BASE_URL}}/posts/{{POST_ID}}
 Content-Type: application/json
 
 {
