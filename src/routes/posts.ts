@@ -14,7 +14,7 @@ router.get("/posts", getAllPosts);
 
 router.get("/posts/:id", getPostById);
 
-router.patch("/posts/:id", updatePost);
+router.put("/posts/:id", updatePost);
 
 router.delete("/posts/:id", deletePost);
 
