@@ -19,4 +19,13 @@ app.use('/status', (req, res) => {
   });
 })
 
+app.use('/status-badge', (req, res) => {
+  res.send({
+    schemaVersion: 1,
+    label: "status",
+    message: "ok",
+    color: "green"
+  });
+})
+
 app.use(errorHandler);
