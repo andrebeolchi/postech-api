@@ -21,7 +21,7 @@ This is a simple API that allows you to CRUD posts.
 - [X] Create the database schema
 - [X] Create the CRUD operations for the posts
 - [X] Add CI/CD (GitHub Actions)
-- [ ] Add custom error handling
+- [X] Add custom error handling
 - [ ] Record a video showing how to use the API
 
 ## Endpoints
