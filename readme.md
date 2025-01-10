@@ -1,3 +1,5 @@
+<img src="https://img.shields.io/endpoint?url=https://postech-api.onrender.com/status-badge)"/>
+
 # PosTech
 ## Description
 This is a simple API that allows you to CRUD posts.
