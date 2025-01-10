@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/endpoint?url=https://postech-api.onrender.com/status-badge)"/>
+<img src="https://img.shields.io/endpoint?url=https://postech-api.onrender.com/status-badge"/>
 
 # PosTech
 ## Description
