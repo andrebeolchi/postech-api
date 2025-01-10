@@ -13,4 +13,10 @@ app.use(express.json());
 
 app.use("/posts", postsRouter);
 
+app.use('/status', (req, res) => {
+  res.send({
+    status: 'OK'
+  });
+})
+
 app.use(errorHandler);
