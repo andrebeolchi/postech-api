@@ -1,13 +1,16 @@
+import { MissingParametersError, OperationFailedError } from "../../errors";
 import { PostsRepository } from "../../repositories/posts-repository";
 
 export class DeletePostService {
-  constructor(
-    private postsRepository: PostsRepository
-  ) {}
+  constructor(private postsRepository: PostsRepository) {}
 
   async execute(id: string) {
-    if (!id) throw new Error("ID is required");
+    if (!id) throw new MissingParametersError("ID is required");
 
-    await this.postsRepository.delete(id);
+    try {
+      await this.postsRepository.delete(id);
+    } catch (error) {
+      throw new OperationFailedError("Failed to delete post");
+    }
   }
 }

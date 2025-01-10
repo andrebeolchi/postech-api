@@ -10,13 +10,6 @@ export const updatePost = async (req: Request, res: Response) => {
   const prismaPostRepository = new PrismaPostsRepository();
   const updatePost = new UpdatePostService(prismaPostRepository);
 
-  try {
-    await updatePost.execute({ id, title, content });
-    res.status(200).send();
-  } catch (error: any) {
-    //TODO - Create a custom error handler to handle status code and error messages
-    res.status(400).send({
-      error: error.message
-    })
-  }
-}
+  await updatePost.execute({ id, title, content });
+  res.status(200).send();
+};

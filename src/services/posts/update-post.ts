@@ -1,3 +1,4 @@
+import { MissingParametersError, OperationFailedError } from "../../errors";
 import { PostsRepository } from "../../repositories/posts-repository";
 
 interface UpdatePostRequest {
@@ -7,17 +8,20 @@ interface UpdatePostRequest {
 }
 
 export class UpdatePostService {
-  constructor(
-    private postsRepository: PostsRepository
-  ) { }
+  constructor(private postsRepository: PostsRepository) {}
 
   async execute({ id, title, content }: UpdatePostRequest) {
     if (!id) {
-      throw new Error("ID is required");
+      throw new MissingParametersError("ID is required");
     }
     if (!title && !content) {
-      throw new Error("Title or content is required");
+      throw new MissingParametersError("Title or content is required");
     }
-    await this.postsRepository.update({ id, title, content });
+
+    try {
+      await this.postsRepository.update({ id, title, content });
+    } catch (error) {
+      throw new OperationFailedError("Failed to update post");
+    }
   }
 }
