@@ -9,4 +9,4 @@ export const app: Express = express();
 
 app.use(express.json());
 
-app.use(postsRouter);
+app.use('/posts', postsRouter);
