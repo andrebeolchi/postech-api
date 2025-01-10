@@ -14,13 +14,13 @@ app.use(express.json());
 app.use("/posts", postsRouter);
 
 app.use('/status', (req, res) => {
-  res.send({
+  res.status(200).send({
     status: 'OK'
   });
 })
 
 app.use('/status-badge', (req, res) => {
-  res.send({
+  res.status(200).send({
     schemaVersion: 1,
     label: "status",
     message: "ok",
