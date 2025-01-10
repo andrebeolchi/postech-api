@@ -20,7 +20,7 @@ This is a simple API that allows you to CRUD posts.
 - [X] Install and configure Prisma ORM
 - [X] Create the database schema
 - [X] Create the CRUD operations for the posts
-- [ ] Add CI/CD (GitHub Actions)
+- [X] Add CI/CD (GitHub Actions)
 - [ ] Add custom error handling
 - [ ] Record a video showing how to use the API
 
@@ -30,6 +30,7 @@ This is a simple API that allows you to CRUD posts.
 - POST `/posts` - Create a new post
 - PUT `/posts/:id` - Update a post by id
 - DELETE `/posts/:id` - Delete a post by id
+- GET `/posts/search` - Get posts by query
 
 ## Tests
 To run the tests, run `yarn test`

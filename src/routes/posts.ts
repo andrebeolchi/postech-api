@@ -5,17 +5,20 @@ import { deletePost } from "../controllers/posts/delete-post";
 import { getAllPosts } from "../controllers/posts/get-all-posts";
 import { getPostById } from "../controllers/posts/get-post-by-id";
 import { updatePost } from "../controllers/posts/update-post";
+import { getPostsByQuery } from "../controllers/posts/get-posts-by-query";
 
 const router = Router();
 
-router.post("/posts", createPost);
+router.post("/", createPost);
 
-router.get("/posts", getAllPosts);
+router.get("/", getAllPosts);
 
-router.get("/posts/:id", getPostById);
+router.get("/search", getPostsByQuery);
 
-router.put("/posts/:id", updatePost);
+router.get("/:id", getPostById);
 
-router.delete("/posts/:id", deletePost);
+router.put("/:id", updatePost);
+
+router.delete("/:id", deletePost);
 
 export { router };

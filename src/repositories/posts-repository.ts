@@ -24,6 +24,8 @@ export interface PostsRepository {
 
   getById(id: string): Promise<Post | null>;
 
+  getByQuery(query: string): Promise<Post[] | null>;
+
   update(data: UpdatePostData): Promise<void>;
 
   delete(id: string): Promise<void>;
