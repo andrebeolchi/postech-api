@@ -8,13 +8,6 @@ export const createPost = async (req: Request, res: Response) => {
   const prismaPostRepository = new PrismaPostsRepository();
   const createPost = new CreatePostService(prismaPostRepository);
 
-  try {
-    await createPost.execute({ title, content });
-    res.status(201).send();
-  } catch (error: any) {
-    //TODO - Create a custom error handler to handle status code and error messages
-    res.status(400).send({
-      error: error.message
-    })
-  }
-}
+  await createPost.execute({ title, content });
+  res.status(201).send();
+};

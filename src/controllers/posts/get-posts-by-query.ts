@@ -8,13 +8,6 @@ export const getPostsByQuery = async (req: Request, res: Response) => {
   const prismaPostRepository = new PrismaPostsRepository();
   const getPostByQuery = new GetPostsByQueryService(prismaPostRepository);
 
-  try {
-    const post = await getPostByQuery.execute(query as string || "");
-    res.status(200).send(post);
-  } catch (error: any) {
-    //TODO - Create a custom error handler to handle status code and error messages
-    res.status(400).send({
-      error: error.message,
-    });
-  }
+  const post = await getPostByQuery.execute((query as string) || "");
+  res.status(200).send(post);
 };
